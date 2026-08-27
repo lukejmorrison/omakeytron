@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "wizwam.omakeytron",
+  "name": "OmaKeytron",
+  "version": "1.1.0",
+  "author": "Wizwam",
+  "license": "MIT",
+  "homepage": "https://github.com/lukejmorrison/omakeytron",
+  "description": "Name the three Keychron V6 Max Bluetooth hosts (FN+1/2/3) and see which one is on this Omarchy PC. Switching itself is firmware on the keyboard.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "OmaKeytron",
+    "description": "FN+1 Omarchy PC, FN+2 Mac Mini, FN+3 Windows Laptop. Bar chip plus OSD when the V6 Max joins or leaves this machine.",
+    "category": "Hardware",
+    "aliases": [
+      "omakeytron",
+      "keytron",
+      "keychron",
+      "keyboard",
+      "bluetooth",
+      "v6 max",
+      "fn1",
+      "host switch"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "refreshIntervalSec": 2,
+      "showOsd": true,
+      "thisSlot": "1",
+      "slot1Name": "Omarchy PC",
+      "slot2Name": "Mac Mini",
+      "slot3Name": "Windows Laptop",
+      "deviceMatch": "Keychron V6 Max",
+      "deviceAddress": ""
+    },
+    "schema": [
+      {
+        "key": "thisSlot",
+        "type": "enum",
+        "label": "This machine is FN+",
+        "options": ["1", "2", "3"],
+        "defaultValue": "1",
+        "description": "Bluetooth host slot paired to this Omarchy PC. Tap that FN chord on the V6 Max to return here."
+      },
+      {
+        "key": "slot1Name",
+        "type": "string",
+        "label": "FN+1 host",
+        "defaultValue": "Omarchy PC"
+      },
+      {
+        "key": "slot2Name",
+        "type": "string",
+        "label": "FN+2 host",
+        "defaultValue": "Mac Mini"
+      },
+      {
+        "key": "slot3Name",
+        "type": "string",
+        "label": "FN+3 host",
+        "defaultValue": "Windows Laptop"
+      },
+      {
+        "key": "deviceMatch",
+        "type": "string",
+        "label": "Bluetooth name contains",
+        "defaultValue": "Keychron V6 Max",
+        "description": "Used when device address is empty."
+      },
+      {
+        "key": "deviceAddress",
+        "type": "string",
+        "label": "Pin Bluetooth address",
+        "defaultValue": "",
+        "description": "Optional AA:BB:CC:DD:EE:FF. Leave empty to match by name."
+      },
+      {
+        "key": "showOsd",
+        "type": "boolean",
+        "label": "OSD on connect / leave",
+        "defaultValue": true,
+        "description": "Show the Omarchy OSD when the keyboard joins or leaves this PC."
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Refresh interval (seconds)",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "defaultValue": 2
+      }
+    ]
+  }
+}

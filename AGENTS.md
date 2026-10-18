@@ -15,3 +15,5 @@ Do not open `/home/luke/dev/omarchy` (lowercase).
 cd /home/luke/dev/omakeytron
 ./scripts/test.sh
 ```
+
+- This repo is public. When a change alters anything a user can see, add or refresh a screenshot in README.md (images in docs/screenshots/, relative links). The README is the marketing.
